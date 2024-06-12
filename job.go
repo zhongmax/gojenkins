@@ -49,10 +49,16 @@ type ParameterDefinition struct {
 		Name  string      `json:"name"`
 		Value interface{} `json:"value"`
 	} `json:"defaultParameterValue"`
-	Description string   `json:"description"`
-	Name        string   `json:"name"`
-	Type        string   `json:"type"`
-	Choices     []string `json:"choices,omitempty"`
+	Description   string   `json:"description"`
+	Name          string   `json:"name"`
+	Type          string   `json:"type"`
+	Choices       []string `json:"choices,omitempty"`
+	AllValueItems struct {
+		Values []struct {
+			Name  string `json:"name"`
+			Value string `json:"value"`
+		} `json:"values"`
+	} `json:"allValueItems,omitempty"`
 }
 
 type JobResponse struct {
