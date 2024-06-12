@@ -237,8 +237,8 @@ func (r *Requester) Do(ctx context.Context, ar *APIRequest, responseStruct inter
 			}
 			log.Printf("DEBUG %q\n", dump)
 		}
-		respData, _ := io.ReadAll(response.Body)
-		fmt.Println(string(respData))
+		// respData, _ := io.ReadAll(response.Body)
+		// fmt.Println(string(respData))
 		errorText := response.Header.Get("X-Error")
 		if errorText != "" {
 			return nil, errors.New(errorText)
